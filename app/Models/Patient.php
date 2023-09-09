@@ -9,6 +9,8 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
+use Symfony\Contracts\Service\Attribute\Required;
 
 /**
  * Class Patient
@@ -37,6 +39,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Patient extends Model
 {
+
+	// use HasApiTokens, HasFactory, Notifiable;
+
 	protected $table = 'patients';
 
 	protected $hidden = [
@@ -49,7 +54,7 @@ class Patient extends Model
 		'date_naissance',
 		'genre',
 		'telephone',
-		'Email',
+		'email',
 		'password',
 		'cni',
 		'profession',
